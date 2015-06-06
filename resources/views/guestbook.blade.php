@@ -21,12 +21,12 @@
 
 <div id = "guestbook">
 
-    <form method = "POST" v-on = "submit onSubmitForm">
+    <form method = "POST" v-on = "submit: onSubmitForm">
 
         <div class = "form-group">
             <label for = "name">Name:
 
-                <span class = "error" v-if="! newMessage.name">* </span>
+                <span class = "error" v-if = "! newMessage.name">* </span>
 
             </label>
             <input type = "text" name = "name" id = "name" class = "form-control" v-model = "newMessage.name">
@@ -35,17 +35,20 @@
         <div class = "form-group">
             <label for = "message">Message:
 
-                <span class = "error" v-if="! newMessage.message">* </span>
+                <span class = "error" v-if = "! newMessage.message">* </span>
 
             </label>
 
-            <textarea name = "message" id = "message" class = "form-control" v-model = "newMessage.message"></textarea>
+            <textarea name = "message" id = "message" class = "form-control"
+                      v-model = "newMessage.message"></textarea>
         </div>
 
         <div class = "form-group">
 
             <button type = "submit" class = "btn btn-default" v-attr = "disabled: errors">Sign Guestbook</button>
         </div>
+
+        <div class = "alert alert-success" v-if = "submitted">Thanks!</div>
 
     </form>
 
@@ -58,7 +61,6 @@
 
     <br>
     <br>
-    @{{ $data | json}}
 
 </div>
 
