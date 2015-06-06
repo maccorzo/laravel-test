@@ -11,6 +11,28 @@
 |
 */
 
+get('guestbook', function() {
+
+    return view('guestbook');
+
+
+});
+
+// API
+
+get('api/messages', function() {
+
+    return App\Message::all();
+
+});
+
+post('api/messages', function() {
+
+    App\Message::create(Request::all());
+
+});
+
+/*
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
@@ -19,3 +41,4 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+*/

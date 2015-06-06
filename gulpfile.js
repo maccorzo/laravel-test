@@ -11,6 +11,11 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
-    mix.less('app.less');
+elixir(function (mix) {
+    mix.scripts([
+
+        'vendor/vue.min.js',
+        'vendor/vue-resource.js'
+
+    ], 'public/js/vendor.js')
 });
