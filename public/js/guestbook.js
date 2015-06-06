@@ -9,8 +9,13 @@ new Vue({
             name: '',
             message: ''
 
-        }
+        },
+
+
+        submitted: false
+
     },
+
 
     computed: {
 
@@ -45,6 +50,15 @@ new Vue({
 
 
             });
+
+        },
+
+        onSubmitForm: function (e) {
+
+            e.preventDefault();
+
+            this.submitted = true;
+
 
         }
 
